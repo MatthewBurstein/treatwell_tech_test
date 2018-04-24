@@ -15,19 +15,38 @@
 - 3 methods build_top_row, build_bottom_row, build_middle_row?
 - Test-coverage
 - rubocop
-- a, b == 0?
+- what to do when a == 0 || b == 0
 
 #### UTF encodings:
-8988
+
 ⌜
-8989
+8988
+"\u231C"
+
 ⌝
-8990
+8989
+"\u231D"
+
 ⌞
-8991
+8990
+"\u231E"
+
 ⌟
-903
+8991
+"\u231F"
+
 ·
+903
+"\u0387"
 
 eg
 [8988].pack("U")
+
+
+#### Points of interest
+
+- Best way to handle encoding: haven't worked with this before
+  - Tried the following ideas:
+    - Array#Pack - works, and I think is fairly safe across platforms but looks a bit ugly
+    - Integer#chr - IRB and PRY not happy and display a character not found character
+    - Eventual method: use String#codepoints to find Decimal codepoint for character then convert to Hex codepoint using http://www.ltg.ed.ac.uk/~richard/utf-8.cgi and display as an escaped character
