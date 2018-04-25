@@ -4,18 +4,25 @@ class Rectangle
   TOP_RIGHT_CORNER = "\u231D"
   BOTTOM_LEFT_CORNER = "\u231E"
   BOTTOM_RIGHT_CORNER = "\u231F"
-  HORIZONTAL_EDGE = "-"
   NEW_LINE = "\n"
 
 
   def printer(width, height)
-    print "#{build_top_row(width)}#{NEW_LINE}#{build_bottom_row(width)}"
+    rows = [build_top_row(width)]
+    (height - 2).times { rows.push(build_middle_row(width)) }
+    rows.push(build_bottom_row(width))
+    print rows.join("\n")
   end
 
   private
 
+  def build_middle_row(width)
+    central_characters = " " * (width - 2)
+    "|" + central_characters + "|"
+  end
+
   def build_top_row(width)
-    edge_characters = HORIZONTAL_EDGE * (width - 2)
+    edge_characters = "-" * (width - 2)
     TOP_LEFT_CORNER + edge_characters + TOP_RIGHT_CORNER
   end
 
