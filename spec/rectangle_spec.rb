@@ -23,5 +23,10 @@ describe Rectangle do
       test_rectangle = "|\n|\n|\n"
       expect{ rectangle.printer(1, 3) }.to output(test_rectangle).to_stdout
     end
+
+    it "prints a 3 x 1 rectangle" do
+      test_rectangle = "---"
+      expect{ rectangle.printer(3, 1) }.to output(test_rectangle).to_stdout
+    end
   end
 end
