@@ -3,7 +3,7 @@
 #### Installation
 ```
 $ git clone git@github.com:MatthewBurstein/treatwell_tech_test.git
-$ bundle install
+$ bundle install [NB needed for testing only]
 ```
 #### Use
 ![Rectangle screenshot](https://i.imgur.com/kFeRJVp.png)
@@ -22,7 +22,7 @@ $ rspec
 The steps I followed were:
 - Research and plan the best method for displaying the corner characters
 - Decide on whether the method should return or print the string, and which print method to use (see reasoning below)
-- Follow TDD, starting with a basic square, and adding more functionality itteratively
+- Follow TDD, starting with a 2 x 2 square, and adding more functionality itteratively
 - Test for and provide functionality for edge cases
 - Before and after each step I manually feature tested the method in IRB to ensure the desired behaviour
 
