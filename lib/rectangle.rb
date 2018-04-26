@@ -8,6 +8,7 @@ class Rectangle
 
 
   def printer(width, height)
+    return print "|\n" * height if width == 1
     rows = [build_top_row(width)]
     (height - 2).times { rows.push(build_middle_row(width)) }
     rows.push(build_bottom_row(width))
@@ -27,7 +28,7 @@ class Rectangle
   end
 
   def build_bottom_row(width)
-    edge_characters = HORIZONTAL_EDGE * (width - 2)
+    edge_characters = "-" * (width - 2)
     BOTTOM_LEFT_CORNER  + edge_characters + BOTTOM_RIGHT_CORNER
   end
 

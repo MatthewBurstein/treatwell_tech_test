@@ -18,5 +18,10 @@ describe Rectangle do
       test_square = "\u231C-\u231D\n| |\n\u231E-\u231F"
       expect{ rectangle.printer(3, 3) }.to output(test_square).to_stdout
     end
+
+    it "prints a 1 x 3 rectagle" do
+      test_rectangle = "|\n|\n|\n"
+      expect{ rectangle.printer(1, 3) }.to output(test_rectangle).to_stdout
+    end
   end
 end
