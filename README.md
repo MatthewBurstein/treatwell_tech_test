@@ -2,7 +2,7 @@
 
 #### Installation
 ```
-$ git clone https://github.com/MatthewBurstein/treatwell_tech_test
+$ git clone git@github.com:MatthewBurstein/treatwell_tech_test.git
 $ bundle install
 ```
 #### Use
