@@ -8,18 +8,23 @@ class Rectangle
 
 
   def printer(width, height)
+    return if width < 1 || height < 1
+    return build_height_one(width) if height == 1
     return build_width_one(height) if width == 1
-    return print "-" * width if height == 1
     rows = [build_top_row(width)]
-    (height - 2).times { rows.push(build_middle_row(width)) }
-    rows.push(build_bottom_row(width))
+    (height - 2).times { rows << build_middle_row(width) }
+    rows << build_bottom_row(width)
     print rows.join("\n")
   end
 
   private
 
+  def build_height_one(width)
+     print "-" * width
+  end
+
   def build_width_one(height)
-    print "|\n" * height
+    print "|#{NEW_LINE}" * height
   end
 
   def build_middle_row(width)

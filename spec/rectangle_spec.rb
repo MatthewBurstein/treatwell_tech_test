@@ -28,5 +28,13 @@ describe Rectangle do
       test_rectangle = "---"
       expect{ rectangle.printer(3, 1) }.to output(test_rectangle).to_stdout
     end
+
+    it "prints nothing if height less than 1" do
+      expect{ rectangle.printer(1, 0) }.not_to output.to_stdout
+    end
+
+    it "prints nothing if width less than 1" do
+      expect{ rectangle.printer(0, 1) }.not_to output.to_stdout
+    end
   end
 end
